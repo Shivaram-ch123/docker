@@ -15,25 +15,21 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    // CREATE
     @PostMapping
     public Employee addEmployee(@RequestBody Employee employee) {
         return employeeService.saveEmployee(employee);
     }
 
-    // READ ALL
     @GetMapping
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
 
-    // READ BY ID
     @GetMapping("/{id}")
     public Employee getEmployeeById(@PathVariable Long id) {
         return employeeService.getEmployeeById(id);
     }
 
-    // DELETE
     @DeleteMapping("/{id}")
     public String deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);

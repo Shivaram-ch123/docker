@@ -13,22 +13,18 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    // save employee
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
-    // get all employees
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
-    // get by id
     public Employee getEmployeeById(Long id) {
         return employeeRepository.findById(id).orElse(null);
     }
 
-    // delete by id
     public void deleteEmployee(Long id) {
         employeeRepository.deleteById(id);
     }
